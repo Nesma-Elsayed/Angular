@@ -1,0 +1,28 @@
+<h1 my product></h1>
+
+<div class="border w-50 my-5 container">
+    <div class="row justify-content-center mt-5">
+      <div class="col-8">
+        <table class="table  table-hover text-center"> 
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>ProductName</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody >
+            <tr *ngFor="let product of products; index as index">
+              <td>{{product.id}} </td>
+              <td>{{product.productname}} </td>
+              <td>
+                <i class="bi bi-eye-fill blue" [routerLink]="['/product', product.id]"></i>
+                <i (click)="delete(product.id)" class="bi bi-trash3-fill text-danger mx-2"></i>
+                <i class="bi bi-pencil-square" [routerLink]="['/product',product.id,'edit']"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

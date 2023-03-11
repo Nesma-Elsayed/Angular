@@ -1,0 +1,23 @@
+<div class="border m-5 p-2">
+    <div class="">
+        <div class="d-flex text-center">
+            <div class="col-6">
+                <img src="{{product?.imgurl}}" alt="">
+            </div>
+            <div class="text-center">
+                <h2 class="text-danger">Product Name : {{product?.productname}}</h2>
+                <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.</p>
+                <p class=" fs-5"><span class="text-danger">Price : </span> {{product?.price |currency}} </p>
+                <p class=" fs-5"><span class="text-danger">Quantity :</span>  {{product?.quantity}} </p>
+                <div>
+                    <i class="bi bi-star-fill text-danger"></i>
+                    <i class="bi bi-star-fill text-danger"></i>
+                    <i class="bi bi-star-fill text-danger"></i>
+                    <i class="bi bi-star-fill text-danger"></i>
+                    <i class="bi bi-star-fill text-danger"></i>
+                </div>
+                <button type="button" class="btn btn-warning mt-5" [routerLink]="['/product']">back to product</button>
+            </div>
+        </div>
+    </div>
+</div>

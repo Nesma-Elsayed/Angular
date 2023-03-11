@@ -1,0 +1,61 @@
+<div class=" container mt-5 border w-50">
+    <div class="row justify-content-center">
+    
+    <form class="w-50 m-5 "  [formGroup]="productForm" (submit)="submitform($event)">
+        <div class="mb-3">
+          <label for="name" class="form-label">Product Name</label>
+          <input 
+          formControlName="productname"
+          placeholder="Enter product name"
+          type="text" class="form-control"  name="productname" id="name">
+        </div>
+
+        <ng-container *ngIf="getname.touched">
+          <div *ngIf="getname.hasError('required')" id="emailHelp" class="form-text text-danger">
+            Name Required
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="getname.touched">
+          <div *ngIf="getname.hasError('minlength')" id="emailHelp" class="form-text text-danger">
+            Name must be greater than 3
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="getname.touched">
+          <div *ngIf="getname.hasError('pattern')" id="emailHelp" class="form-text text-danger">
+            Name must be letter
+          </div>
+        </ng-container>
+
+        
+
+        <div class="mb-3">
+          <label for="price" class="form-label">Price</label>
+          <input 
+          formControlName="price"
+          placeholder="Enter product Price"
+          type="text" class="form-control"  name="price" id="price">
+        </div>
+        <!-- <div id="emailHelp" class="form-text text-danger">We'll never share your email with anyone else.</div> -->
+        <div class="mb-3">
+          <label for="quantity" class="form-label">Quantity</label>
+          <input
+          formControlName="quantity"
+          placeholder="Enter Product Quantity"
+           type="text" class="form-control"  name="quantity" id="quantity">
+        </div>
+        <!-- <div id="emailHelp" class="form-text text-danger">We'll never share your email with anyone else.</div> -->
+        <div class="mb-3">
+          <label for="img" class="form-label">IMg</label>
+          <input formControlName="imgurl"
+          placeholder="Enter Image url"
+           type="text" class="form-control"  name="imgurl" id="img">
+        </div>
+        <!-- <div class="lead">{{ productForm.value | json}}</div> -->
+        <button type="submit" class="btn btn-primary">{{productid ? "Edit" :"Add"}}</button>
+      </form>
+    </div>
+        
+    </div>
+    
